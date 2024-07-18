@@ -19,6 +19,9 @@ class Bot(commands.Bot):
     async def event_channel_joined(self, channel):
         print(f'Bot joined channel "{channel.name}"')
 
+    async def event_message(self, message):
+        print(f'{message.channel.name}/{message.author.name}: "{message.content}"')
+
     @commands.command()
     async def ping(self, ctx: commands.Context):
         await ctx.reply(f"Pong!")
