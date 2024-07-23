@@ -1,7 +1,5 @@
 import { MongoClient } from "mongodb";
 
-const DATABASE = process.env.ENVIRONMENT || "test";
-
 /**
  * Connects to the database.
  * This is called automatically by other functions.
@@ -31,7 +29,10 @@ export async function connect() {
 export async function insert(table, object) {
   const mongo = await connect();
 
-  const data = await mongo.db(DATABASE).collection(table).insertOne(object);
+  const data = await mongo
+    .db(process.env.ENVIRONMENT)
+    .collection(table)
+    .insertOne(object);
 
   await mongo.close();
 

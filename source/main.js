@@ -1,4 +1,9 @@
+import os from "os";
+
 import "dotenv/config";
+
+if (!process.env.ENVIRONMENT)
+  process.env.ENVIRONMENT = `development-{os.hostname()}`;
 
 import { RefreshingAuthProvider } from "@twurple/auth";
 import { ApiClient } from "@twurple/api";
@@ -18,7 +23,7 @@ await authProvider.addUserForToken({
 
 const api = new ApiClient({ authProvider });
 
-const channels = ["area96digital", "yayjaybae"];
+const channels = ["area96digital", "yayjaybae", "kazuhaamanogawa"];
 
 setInterval(async () => {
   channels.forEach(async (channelName) => {
