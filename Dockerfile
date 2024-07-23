@@ -1,10 +1,12 @@
-FROM python:3.12-alpine
+FROM node:22
 
 WORKDIR /app
 
-RUN python3 -m pip install --user pipenv && \
-    python3 -m pipenv install
+COPY package.json .
+COPY package-lock.json .
 
-COPY main.py /app/main.py
+RUN npm install
 
-RUN python3 -m pipenv run python main.py
+COPY . .
+
+RUN npm start

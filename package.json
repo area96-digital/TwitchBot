@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@twurple/api": "^7.1.0",
+    "@twurple/auth": "^7.1.0",
+    "@twurple/eventsub-http": "^7.1.0",
+    "@twurple/eventsub-ws": "^7.1.0",
+    "@twurple/pubsub": "^7.1.0",
+    "dotenv": "^16.4.5",
+    "mongodb": "^6.8.0"
+  },
+  "scripts": {
+    "start": "node source/main.js"
+  },
+  "type": "module"
+}
