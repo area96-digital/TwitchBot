@@ -4,7 +4,7 @@ import "dotenv/config";
 
 // setup environment defaults
 if (!process.env.ENVIRONMENT)
-  process.env.ENVIRONMENT = `development-{os.hostname()}`;
+  process.env.ENVIRONMENT = `development-${os.hostname()}`;
 
 if (!process.env.INTERVAL_SECONDS) process.env.INTERVAL_SECONDS = 60;
 
