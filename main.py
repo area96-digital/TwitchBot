@@ -20,6 +20,9 @@ class Bot(commands.Bot):
         print(f'Bot joined channel "{channel.name}"')
 
     async def event_message(self, message):
+        if message.echo:
+            return
+
         print(f'{message.channel.name}/{message.author.name}: "{message.content}"')
 
     @commands.command()
