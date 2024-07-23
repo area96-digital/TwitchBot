@@ -26,6 +26,15 @@ await authProvider.addUserForToken({
 
 const api = new ApiClient({ authProvider });
 
+const myUser = await api.users.getUserByName("area96digital");
+
+if (!myUser?.id) {
+  console.error("Couln't connect to Twitch API");
+  process.exit(1);
+} else {
+  console.log(`Connected to Twitch API as ${myUser.displayName}`);
+}
+
 const channels = ["area96digital", "yayjaybae"];
 
 setInterval(async () => {
