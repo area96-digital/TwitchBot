@@ -4,7 +4,7 @@ import "dotenv/config";
 
 // setup environment defaults
 if (!process.env.ENVIRONMENT)
-  process.env.ENVIRONMENT = `development-${os.hostname()}`;
+  process.env.ENVIRONMENT = `a96bot-development-${os.hostname()}`;
 
 if (!process.env.INTERVAL_SECONDS) process.env.INTERVAL_SECONDS = 60;
 
@@ -26,7 +26,7 @@ await authProvider.addUserForToken({
 
 const api = new ApiClient({ authProvider });
 
-const channels = ["area96digital", "yayjaybae", "kazuhaamanogawa"];
+const channels = ["area96digital", "yayjaybae"];
 
 setInterval(async () => {
   channels.forEach(async (channelName) => {
