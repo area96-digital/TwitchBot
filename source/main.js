@@ -35,6 +35,7 @@ setInterval(async () => {
 
     if (userStream) {
       await insert("streamViewers", {
+        timestamp: new Date(),
         channelName,
         viewers: userStream.viewers,
       });
