@@ -32,7 +32,9 @@ if (!myUser?.id) {
   console.error("Couln't connect to Twitch API");
   process.exit(1);
 } else {
-  console.log(`Connected to Twitch API as ${myUser.displayName}`);
+  console.log(
+    `Connected to Twitch API as ${myUser.displayName} (${myUser.id})`
+  );
 }
 
 const channels = ["area96digital", "yayjaybae"];
