@@ -2,8 +2,11 @@ import os from "os";
 
 import "dotenv/config";
 
+// setup environment defaults
 if (!process.env.ENVIRONMENT)
   process.env.ENVIRONMENT = `development-{os.hostname()}`;
+
+if (!process.env.INTERVAL_SECONDS) process.env.INTERVAL_SECONDS = 60;
 
 import { RefreshingAuthProvider } from "@twurple/auth";
 import { ApiClient } from "@twurple/api";
@@ -39,4 +42,4 @@ setInterval(async () => {
       console.log(`Channel ${channelName} has ${userStream.viewers} viewers`);
     }
   });
-}, 1000);
+}, 1000 * process.env.INTERVAL_SECONDS);
