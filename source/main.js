@@ -37,7 +37,7 @@ if (!myUser?.id) {
   );
 }
 
-const channels = ["area96digital", "yayjaybae"];
+const channels = ["area96digital", "yayjaybae", "justawoney", "tygiwygi"];
 
 setInterval(async () => {
   channels.forEach(async (channelName) => {
